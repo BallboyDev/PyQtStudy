@@ -16,13 +16,13 @@ class Example(QWidget):
                 '1', '2', '3', '-',
                 '0', '.', '=', '+']
 
-        position = [(i, j) for i in range(5) for j in range(4)]
+        positions = [(i, j) for i in range(5) for j in range(4)]
 
-        for position, name in zip(position, names):
+        for position, name in zip(positions, names):
             if name == '':
                 continue
             button = QPushButton(name)
-            grid.addWidget(button, *position)
+            grid.addWidget(button, *position) # * => 튜플 값을 각각 출력 ex) (x, y) => x, y
 
         self.move(300, 150)
         self.setWindowTitle('GridLayout')
